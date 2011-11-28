@@ -1,241 +1,313 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Ruby on Rails: Welcome aboard</title>
-    <style type="text/css" media="screen">
-      body {
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
+<!DOCTYPE html SYSTEM "http://www.indonez.com/xhtml1-iframe.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Venno - Event promotion and ticketing system</title>
 
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
+<!-- ////////////////////////////////// -->
+<!-- //      Start Stylesheets       // -->
+<!-- ////////////////////////////////// -->
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/custom-style.css" rel="stylesheet" type="text/css" />
+<link href="css/colorbox.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/noscript.css" rel="stylesheet" type="text/css" media="screen,all" id="noscript" />
 
-      a  {color: #03c}
-      a:hover {
-        background-color: #03c;
-        color: white;
-        text-decoration: none;
-      }
+<!-- ////////////////////////////////// -->
+<!-- //      Javascript Files        // -->
+<!-- ////////////////////////////////// -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript" src="js/jquery.twitter.js"></script>
+<script type="text/javascript" src="js/dropdown.js"></script>
+<script type="text/javascript" src="js/retina.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+<script type="text/javascript">
+   $(function(){ 
+	   		//Twitter Jquery Setting
+			$("#twitter").getTwitter({
+				userName: "vennotweets",
+				numTweets: 1,
+				loaderText: "Loading tweets...",
+				slideIn: true,
+				slideDuration: 750
+		}); 
+			//Front Testimonials Setting    
+        	$('.front-testimonials ul').cycle({
+				timeout: 5000, 
+				fx:      'fade', 
+				pager:   '#pager', 
+				pause:   true,	
+				cleartypeNoBg: true, 
+				pauseOnPagerHover: 0
+        });
+			//Slideshow Setting
+			
+			$('#slide-main').cycle({
+				fx:     'fade',
+				speed:  'slow',
+				pause:   true,
+				timeout: 6000,
+				cleartypeNoBg:   true,
+				pager:  '#slide-title',
+				pagerAnchorBuilder: function(idx, slide) {
+					// return sel string for existing anchor
+					return '#slide-title li:eq(' + (idx) + ') a';
+			}			
+		}); 
+     });	
+	 
+	//Login Colorbox
+	$(document).ready(function(){				
+		$(".login").colorbox({width:"400px"});				
+	});	 	
+	 
+	// Background Slide Setting    
+	
+	var scrollSpeed = 100; // speed in milliseconds	
+	var current = 0; // set the default position	
+	var direction = 'h'; // set the direction
+	function bgscroll(){
+	    current -= 1;  
+	    $('div#glow-bg').css("backgroundPosition", (direction == 'h') ? current+"px 0" : "0 " + current+"px");   
+	}
+	 setInterval("bgscroll()", scrollSpeed);	
+	
+</script>
 
+</head>
 
-      #page {
-        background-color: #f0f0f0;
-        width: 750px;
-        margin: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
+<body>	
+	<div id="container">    	
+        <div id="top-container">
+        	
+            <div id="glow-bg">
+            
+            	<!-- BEGIN OF MAINMENU -->
+                <div id="menu-wrapper">
+                    <div id="menu-container">
+                        <div id="logo"><a href="index.html"><img src="images/logo.png" alt="" /></a></div>
+                        <div id="mainmenu">
+                            <ul id="menu">
 
-      #content {
-        float: left;
-        background-color: white;
-        border: 3px solid #aaa;
-        border-top: none;
-        padding: 25px;
-        width: 500px;
-      }
+                               
+                                
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- END OF MAINMENU -->
+                
+                <!-- BEGIN OF HEADER -->
+                <div id="header-container">
+                	<div id="phone-number"><h3> 619.387.VENNO</h3></div>                    
+                    <div id="slideshow-wrapper">
+                    	<div id="slideshow">
+                            <ul id="slide-main">
+                            
+                            	<!-- Slideshow 1 -->
+                                <li>
+                                	<div class="ipd-case">
+                                    	<div class="webpage">
+                                            <img src="images/webpage.png" width="342" height="307" alt="Web Page" />
+                                            <div class="retina"></div>
+                                        </div>
+                                    </div>
+                                    <div class="slide-text1">
+                                        <h2>Create and Share Events</h2>
+                                        <p>Venno makes it simple to create your event with all the details you need and features you won’t find anywhere else. Easily post your event to Facebook, track who’s purchasing, and who is promoting well, all from one simple dashboard.  </p>
+                                        <div class="slide-button">
+                                            <a class="button-big" href="#"><span>Signup for Free &raquo;</span></a> 
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <!-- Slideshow 2 -->
+								<li>                                	
+                                    <div class="slide-text4">
+                                        <h2>Sell Tickets to Events</h2>
+                                        <p>With Venno you can sell tickets, VIP Packages, or let people jump on your guestlist up to the final minute of the night because with Venno it happens in real-time, it happens now, when you need it. Never shut down sales or guestlists and always stay up to date.</p>
+                                        <div class="slide-button">
+                                            <a class="button-big" href="#"><span>Signup for Free &raquo;</span></a> 
+                                        </div>
+                                    </div>
+                                    <div class="imgslide-right">
+                                    	<img src="images/img-slide2.png" alt="" />
+                                    </div>
+                                </li>
+                                
+                                
+                                <!-- Slideshow 3 -->
+                                
+                                <!-- Slideshow 4 -->
+                                <li>                                	
+                                    <div class="slide-text2">
+                                        <h2>Support All Major Web Browsers.</h2>
+                                        <p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores</p>
+                                        <div class="slidecenter-img">
+                                            <img src="images/browser-img.png" alt="" />
+                                        </div>
+                                    </div>
+                                </li>
 
-      #sidebar {
-        float: right;
-        width: 175px;
-      }
+								<li>                                	
+                                    <div class="slide-text3">
+                                    	<img style="background: url('images/img-slide.jpg') no-repeat 0 0" src="images/space.gif" width="960" height="304" alt="" />
+                                        <h2>Track Events Elegantly</h2>
+                                        <p>With Venno you can know exactly what happened, how it happened, and who made it happen. Did Mark at the door get a lot of people in, or was Jenny working her ass off promoting your event? With Venno, now you can know, in real time.</p>                                        
+                                    </div>
+									<div class="slide-button">
+                                        <a class="button-big" href="#"><span>Signup for Free &raquo;</span></a> 
+                                    </div>
+                                </li>
 
-      #footer {
-        clear: both;
-      }
+                                
+                            </ul>
+                            <ul id="slide-title">
+                                <li class="title">
+                                	<a href="">
+                                	<span class="slide-icon"><img src="images/slide-icon1.png" alt="" /></span>
+                                    Manage
+                                    </a>
+                                </li>
+                                <li class="title">
+                                	<a href="">
+                                	<span class="slide-icon"><img src="images/slide-icon2.png" alt="" /></span>
+                                    Sell
+                                    </a>
+                                </li>
+                                <li class="title">
+                                	<a href="">
+                                	<span class="slide-icon"><img src="images/slide-icon3.png" alt="" /></span>
+                                    Promote
+                                    </a>
+                                </li>
+                                <li class="title line-last">
+                                	<a href="">
+                                    <span class="slide-icon"><img src="images/slide-icon4.png" alt="" /></span>
+                                    Track
+                                    </a>
+                                </li>
+                        	</ul>
+                        </div>
+                    </div>
+                    <div id="slideshow-shadow"></div>
+                </div>
+                <!-- END OF HEADER -->
+                
+                <!-- BEGIN OF CONTENT -->
+                <div id="content">
+                	<div class="maincontent">
+                    
+                    	<div id="top-content">
+                        	<div id="twitter-bird"><img src="images/tweet.png" alt="" /></div>
+                       		<div id="twitter"></div>
+                            <div id="fb-like"><iframe frameborder="0" scrolling="no" style="border: medium none; overflow: hidden; width: 81px; height: 20px;" src="http://www.facebook.com/plugins/like.php?href=http://www.venno.com/&amp;layout=button_count&amp;show_faces=false&amp;width=66&amp;action=like&amp;colorscheme=light"></iframe></div> 	
+                        </div>
+                        
+                       
+                        <div class="clear"></div>
+                        <div class="divider-fullwidth"></div>                        
+                        
 
-      #header, #about, #getting-started {
-        padding-left: 75px;
-        padding-right: 30px;
-      }
+						<div id="subscribe">
+									
+											
+										
+											<form action="http://venno.us2.list-manage.com/subscribe/post?u=7c03161c7774c08ef84d1638e&amp;id=2d1ac0a41a" method="post" id="subscribe_form" name="mc-embedded-subscribe-form" class="validate" target="_blank"  >
 
+											
+											       <input type="email"  value="Your email address..." onblur="if (this.value == ''){this.value = 'Your email address...'; }" onfocus="if (this.value == 'Your email address...') {this.value = ''; }" name="EMAIL" class="required email" id="mce-EMAIL">
+											<input type="submit" name="subscribe" id="subscribe_btn" value="">
+											</div>
+											       <div id="mce-responses" class="clear">
+											               <div class="response" id="mce-error-response" style="display:none"></div>
+											               <div class="response" id="mce-success-response" style="display:none"></div>
+											       </div>      
+											</form>
+									
+                        
+                        <div class="clear"></div>
+                        <div class="divider-fullwidth"></div> 
+                        
+                        
+                        </div>
+                
+                	</div>
+                </div>
+                <!-- END OF CONTENT -->
+                
+                <div id="bottom-wrapper">        
+                    <div id="bottom-content">
+                        <div class="logofooter-column">
+                            <img src="images/logo.png" alt="" />
+                        </div>
+                        <div class="contactbottom-column">
+                            <h6>Contact Us</h6>
+                            <p>Tel: +44 0208 1234 355 <br/>
+                            Fax: +44 0208 1234 344 <br/>
+                            Email: hello@procyon-media.com <br/>
+                            Skype: weareprocyon                                 
+                            </p>
+                        </div>
+                        <div class="socialbottom-column">
+                            <h6>Follow Us</h6>
+                            <ul class="social-list">
+                                <li><a href="#"><img src="images/social-icons/follow-footer/social6.png" alt="" /></a></li>
+                                <li><a href="#"><img src="images/social-icons/follow-footer/social5.png" alt="" /></a></li>
+                               
+                                <li><a href="#"><img src="images/social-icons/follow-footer/social4.png" alt="" /></a></li>
+                                
+                                <li><a href="#"><img src="images/social-icons/follow-footer/social11.png" alt="" /></a></li>
+                                
+                                <li><a href="#"><img src="images/social-icons/follow-footer/social18.png" alt="" /></a></li>
+                            </ul>
+                        </div>
+                        <div class="linkbottom-column">
+                            <h6>Media Center</h6>
+                            <ul class="list-bottom">
+                                <li><a href="#">Media Release</a></li>
+                                <li><a href="#">In The Media</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="mailingbottom-column">
+                            <h6>Mailing List</h6>
+                            <p>Sign up if you would like to receive occasional treats from us.</p>
 
-      #header {
-        background-image: url("/assets/rails.png");
-        background-repeat: no-repeat;
-        background-position: top left;
-        height: 64px;
-      }
-      #header h1, #header h2 {margin: 0}
-      #header h2 {
-        color: #888;
-        font-weight: normal;
-        font-size: 16px;
-      }
+							<!-- Begin MailChimp Signup Form -->
+							<div id="mc_embed_signup">
+							<form action="http://venno.us2.list-manage.com/subscribe/post?u=7c03161c7774c08ef84d1638e&amp;id=2d1ac0a41a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"  >
+							       
+							<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+							<div class="mc-field-group">
+							       <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+							</label>
+							       <input type="email"  value="Your email address..." onblur="if (this.value == ''){this.value = 'Your email address...'; }" onfocus="if (this.value == 'Your email address...') {this.value = ''; }" name="EMAIL" class="required email" id="mce-EMAIL">
+							<input type="submit" value="GO" name="subscribe" id="mc-embedded-subscribe" class="sub-button">
+							</div>
+							       <div id="mce-responses" class="clear">
+							               <div class="response" id="mce-error-response" style="display:none"></div>
+							               <div class="response" id="mce-success-response" style="display:none"></div>
+							       </div>      
+							</form>
+							</div>
 
-
-      #about h3 {
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-
-      #about-content {
-        background-color: #ffd;
-        border: 1px solid #fc0;
-        margin-left: -55px;
-        margin-right: -10px;
-      }
-      #about-content table {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 11px;
-        border-collapse: collapse;
-      }
-      #about-content td {
-        padding: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-      #about-content td.name  {color: #555}
-      #about-content td.value {color: #000}
-
-      #about-content ul {
-        padding: 0;
-        list-style-type: none;
-      }
-
-      #about-content.failure {
-        background-color: #fcc;
-        border: 1px solid #f00;
-      }
-      #about-content.failure p {
-        margin: 0;
-        padding: 10px;
-      }
-
-
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-
-
-      #sidebar ul {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #sidebar ul h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-      #sidebar li {
-        list-style-type: none;
-      }
-      #sidebar ul.links li {
-        margin-bottom: 5px;
-      }
-
-      .filename {
-        font-style: italic;
-      }
-    </style>
-    <script type="text/javascript">
-      function about() {
-        info = document.getElementById('about-content');
-        if (window.XMLHttpRequest)
-          { xhr = new XMLHttpRequest(); }
-        else
-          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
-        xhr.open("GET","rails/info/properties",false);
-        xhr.send("");
-        info.innerHTML = xhr.responseText;
-        info.style.display = 'block'
-      }
-    </script>
-  </head>
-  <body>
-    <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://www.ruby-doc.org/core/">Ruby core</a></li>
-              <li><a href="http://www.ruby-doc.org/stdlib/">Ruby standard library</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
-      <div id="content">
-        <div id="header">
-          <h1>Welcome aboard</h1>
-          <h2>You&rsquo;re riding Ruby on Rails!</h2>
-        </div>
-
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
-
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
-
-          <ol>
-            <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
-
-            <li>
-              <h2>Set up a default route and remove <span class="filename">public/index.html</span></h2>
-              <p>Routes are set up in <span class="filename">config/routes.rb</span>.</p>
-            </li>
-
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <code>rake db:create</code> to create your database. If you're not using SQLite (the default), edit <span class="filename">config/database.yml</span> with your username and password.</p>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-      <div id="footer">&nbsp;</div>
-    </div>
-  </body>
+						
+                        </div>         	
+                    </div>
+                </div>            
+                
+                <div id="copyright-text">
+                  	Copyright &copy; 2011 <a href="http://reigngroup.net/">Reign Holding Group, LLC.</a> All rights reserved &nbsp; | &nbsp; <a href="#top" class="scroll">back to top</a>&nbsp;<a href="#top" class="scroll backtop"><img src="images/back-top.png" alt="" /></a>
+                </div>     
+                
+            </div>   
+                        
+        </div>                   	       
+    </div>      
+<script type="text/javascript">$('#noscript').remove();</script>     
+</body>
 </html>
