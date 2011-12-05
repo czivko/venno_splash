@@ -931,7 +931,7 @@ ul#slide-title .activeSlide{
 }
 .slide-text3 h2{
 	width:385px;
-	margin:130px 0px 0px 531px;
+	margin:100px 0px 0px 531px;
 	color:#ffffff;
 	text-shadow:0px 1px 0px #000000;
 	position:absolute;
@@ -957,7 +957,7 @@ ul#slide-title .activeSlide{
 }
 .slide-text3 p{
 	width:366px;
-	margin:158px 0px 20px 533px;
+	margin:138px 0px 20px 533px;
 	font-size:14px;
 	line-height:24px;
 	color:#ffffff;
@@ -1011,7 +1011,10 @@ ul#slide-title .activeSlide{
 	-webkit-border-radius:90px;
 	border-radius:90px;
 }
-
+.retina.guestlist{
+		background:url('../images/electronic-guestlist.jpg') no-repeat center center white;
+	
+}
 .retina.chrome{	
 	cursor:url('../images/blank_google_chrome.cur'),default;
 }
